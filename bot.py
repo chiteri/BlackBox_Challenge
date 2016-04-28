@@ -34,7 +34,7 @@ def prepare_box():
         bbox.reset_level()
     else: 
         # Load the game level 
-        bbox.load_level('../levels/train_level.data', verbose=1)
+        bbox.load_level('blackbox/levels/train_level.data', verbose=1)
         n_features = bbox.get_num_of_features()
         n_actions = bbox.get_num_of_actions()
         max_time = bbox.get_max_time()
