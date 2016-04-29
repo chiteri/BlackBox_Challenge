@@ -1,6 +1,7 @@
 # coding: utf-8 
 # Import the game simulator
 import interface as bbox 
+import random 
 
 # This is the main function - it is the agent's brain. Funciton takes environment state
 # vector and returns an action that agent is to perform. it is enough to only modify  
@@ -18,7 +19,8 @@ def get_action_by_state(state, verbose=0):
         print("score = {}, time={}".format(bbox.get_score(), bbox.get_time()))
         
     # This simple bot always performs action number 0. Not so smart :) 
-    action_to_do = 0 
+    # action_to_do = 0
+    action_to_do = random.randint(0, 3) # Choose a random integer with value between 0 and 3
     return action_to_do
     
     
@@ -34,7 +36,7 @@ def prepare_box():
         bbox.reset_level()
     else: 
         # Load the game level 
-        bbox.load_level('blackbox/levels/train_level.data', verbose=1)
+        bbox.load_level('levels/train_level.data', verbose=1)
         n_features = bbox.get_num_of_features()
         n_actions = bbox.get_num_of_actions()
         max_time = bbox.get_max_time()
